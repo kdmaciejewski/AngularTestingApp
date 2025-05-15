@@ -1,0 +1,6 @@
+<form (ngSubmit)="onSubmit()" class="form">
+  <h2>Add new article</h2>
+  <input [(ngModel)]="title" name="title" placeholder="Title" required />
+  <textarea [(ngModel)]="content" name="content" placeholder="Content" required></textarea>
+  <button type="submit">Add</button>
+</form>
