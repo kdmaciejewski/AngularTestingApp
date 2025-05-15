@@ -6,7 +6,7 @@ import {Article} from '../models/article.model';
   providedIn: 'root',
 })
 export class ArticleService {
-  private articles: Article[] = Array.from({length: 100}, (_, i) => ({
+  private articles: Article[] = Array.from({length: 1000}, (_, i) => ({
     id: i + 1,
     title: `Article ${i + 1}`,
     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',

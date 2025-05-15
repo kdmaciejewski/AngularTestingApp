@@ -1,8 +1,28 @@
-<h2>Article list</h2>
-<ul class="article-list">
-  <li *ngFor="let article of articles" class="article-item">
-    <h3>{{ article.title }}</h3>
-    <p>{{ article.content }}</p>
-    <button (click)="deleteArticle(article.id)">🗑️ Delete</button>
-  </li>
-</ul>
+<!--<h2>Article list</h2>-->
+<!--<ul class="article-list">-->
+<!--  <li *ngFor="let article of articles" class="article-item">-->
+<!--    <h3>{{ article.title }}</h3>-->
+<!--    <p>{{ article.content }}</p>-->
+<!--    <button (click)="deleteArticle(article.id)">🗑️ Delete</button>-->
+<!--  </li>-->
+<!--</ul>-->
+
+<!--lazy loading using @defer blocks-->
+
+<h2>Article List</h2>
+
+<div class="grid-container">
+  @for (article of articles; track article.id) {
+    <div class="article-card">
+      <h3>{{ article.title }}</h3>
+
+      @defer {
+        <p>{{ article.content }}</p>
+      } @placeholder {
+        <p><em>Loading content...</em></p>
+      }
+
+      <button (click)="deleteArticle(article.id)">🗑️ Delete</button>
+    </div>
+  }
+</div>
