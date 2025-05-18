@@ -16,7 +16,7 @@
     <div class="article-card">
       <h3>{{ article.title }}</h3>
 
-      @defer {
+      @defer (hydrate on viewport){
         <p>{{ article.content }}</p>
       } @placeholder {
         <p><em>Loading content...</em></p>
